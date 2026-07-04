@@ -379,7 +379,7 @@ bin\
 
 ```
 # command to run
--namvigate in root directory
+-navigate in root directory
 compile the code :
 ```cmd
 javac -d bin (Get-ChildItem src -Recurse -Filter *.java).FullName     
