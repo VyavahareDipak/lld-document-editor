@@ -18,8 +18,6 @@ Design a document editor that supports:
 
 The design should be scalable, maintainable and easy to extend.
 
----
-
 # Requirements
 
 ### Functional Requirements
@@ -40,10 +38,7 @@ The design should be scalable, maintainable and easy to extend.
 ---
 
 # Design Evolution
-
 Instead of jumping directly to the final solution, this project shows the complete design evolution.
-
----
 
 # Design 1 — Naive Design
 
@@ -79,7 +74,6 @@ A single `DocumentEditor` class performs every responsibility.
 - Large God Object
 - Hard to test
 
----
 
 # Design 2 — Applying SOLID
 
@@ -154,8 +148,6 @@ Example:
 
 No existing code changes.
 
----
-
 ## Document
 
 The document only manages document elements.
@@ -172,8 +164,6 @@ Responsibilities:
 - Store elements
 - Manage document contents
 
----
-
 ## Persistence
 
 Storage is abstracted using an interface.
@@ -188,8 +178,6 @@ FileStorage       DBStorage
 ```
 
 Now storage implementation can change without affecting the editor.
-
----
 
 ## DocumentEditor
 
@@ -207,8 +195,6 @@ render()
 save()
 ```
 
----
-
 # SOLID Principles Used
 
 ## 1. Single Responsibility Principle (SRP)
@@ -221,8 +207,6 @@ Each class has only one reason to change.
 | DocumentElement | Render an element |
 | Persistence | Save document |
 | DocumentEditor | Coordinate operations |
-
----
 
 ## 2. Open Closed Principle (OCP)
 
@@ -240,8 +224,6 @@ DocumentElement
 Text  Image   Video      Table
 ```
 
----
-
 ## 3. Liskov Substitution Principle (LSP)
 
 Anywhere a `DocumentElement` is expected, any implementation can be used.
@@ -254,8 +236,6 @@ elements.add(new ImageElement());
 elements.add(new VideoElement());
 ```
 
----
-
 ## 4. Interface Segregation Principle (ISP)
 
 Instead of one large interface, responsibilities are split.
@@ -266,8 +246,6 @@ Examples:
 - Persistence
 
 Clients only depend on what they actually use.
-
----
 
 ## 5. Dependency Inversion Principle (DIP)
 
@@ -295,8 +273,6 @@ DocumentEditor
 |             |
 FileStorage DBStorage
 ```
-
----
 
 # Design 3 — Better Separation
 
@@ -366,8 +342,6 @@ Responsibilities become much cleaner.
 | Persistence | Save document |
 | DocumentEditor | Coordinate workflow |
 
----
-
 # Design Trade-offs
 
 Separating responsibilities improves maintainability, but introduces more classes.
@@ -379,8 +353,6 @@ In production systems:
 - Business requirements come first.
 - Design principles should guide the implementation, not dominate it.
 - Over-engineering should be avoided.
-
----
 
 
 # Project Structure
@@ -406,8 +378,6 @@ src/
 bin\
 
 ```
-
----
 
 # Key Takeaways
 
