@@ -378,6 +378,17 @@ src/
 bin\
 
 ```
+# command to run
+-namvigate in root directory
+compile the code :
+```cmd
+javac -d bin (Get-ChildItem src -Recurse -Filter *.java).FullName     
+```
+Run :
+```cmd
+ java -cp bin Main    
+```
+
 
 # Key Takeaways
 
